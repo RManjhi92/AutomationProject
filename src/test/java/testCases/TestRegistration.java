@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import baseObjects.HomePage;
@@ -13,6 +14,7 @@ public class TestRegistration extends BaseClass {
 	@Test
 	public void testReg() {
 	HomePage HP=new HomePage(driver);
+	Assert.assertEquals(driver.getCurrentUrl(),"https://automationexercise.com/login");
 	HP.signup();
 	UserRegistration Reg=new UserRegistration(driver);
 	Reg.enterMail("t@yopmail.com");
